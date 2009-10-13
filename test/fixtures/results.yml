@@ -1,0 +1,23 @@
+result_001:
+  id: 1
+  quiz_id: 1
+  name: cool
+  description: "You're a cool guy"
+
+result_002:
+  id: 2
+  quiz_id: 1
+  name: boring
+  description: "You're a boring guy"
+
+result_003:
+  id: 3
+  quiz_id: 1
+  name: nerdy
+  description: "You're a nerd"
+
+result_004:
+  id: 4
+  quiz_id: 1
+  name: jerk
+  description: "You're a jerk"

@@ -1,0 +1,95 @@
+answer_001:
+  id: 1
+  question_id: 1
+  order_num: 1
+  result_id: 1
+  points: 1
+  answer: Tomato
+
+answer_002:
+  id: 2
+  question_id: 1
+  order_num: 2
+  result_id: 2
+  points: 1
+  answer: Kumquat
+
+answer_003:
+  id: 3
+  question_id: 1
+  order_num: 3
+  result_id: 3
+  points: 1
+  answer: Orange
+
+answer_004:
+  id: 4
+  question_id: 1
+  order_num: 4
+  result_id: 4
+  points: 1
+  answer: Banana
+
+answer_005:
+  id: 5
+  question_id: 2
+  order_num: 1
+  result_id: 1
+  points: 1
+  answer: Cat
+
+answer_006:
+  id: 6
+  question_id: 2
+  order_num: 2
+  result_id: 2
+  points: 1
+  answer: Dog
+
+answer_007:
+  id: 7
+  question_id: 2
+  order_num: 3
+  result_id: 3
+  points: 1
+  answer: Parrot
+
+answer_008:
+  id: 8
+  question_id: 2
+  order_num: 4
+  result_id: 4
+  points: 1
+  answer: Monkey
+
+answer_009:
+  id: 9
+  question_id: 3
+  order_num: 1
+  result_id: 1
+  points: 1
+  answer: Stargate
+
+answer_010:
+  id: 10
+  question_id: 3
+  order_num: 2
+  result_id: 2
+  points: 1
+  answer: American Idol
+
+answer_011:
+  id: 11
+  question_id: 3
+  order_num: 3
+  result_id: 3
+  points: 1
+  answer: Lost
+
+answer_012:
+  id: 12
+  question_id: 3
+  order_num: 4
+  result_id: 4
+  points: 1
+  answer: CNN Headline News

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+question_001:
+  id: 1
+  quiz_id: 1
+  order_num: 1
+  question: "What's your favorite fruit?"
+
+question_002:
+  id: 2
+  quiz_id: 1
+  order_num: 2
+  question: "What's your favorite animal?"
+
+question_003:
+  id: 3
+  quiz_id: 1
+  order_num: 3
+  question: "What's your favorite TV show?"
