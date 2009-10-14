@@ -1,5 +1,5 @@
 class Quiz < ActiveRecord::Base
-  has_many :questions
+  has_many :questions, :order=>:order_num
   has_many :results
 
   validates_uniqueness_of :short_name
