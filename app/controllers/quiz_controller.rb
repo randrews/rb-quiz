@@ -32,7 +32,7 @@ take_quiz sends you to a quiz_results page.
     elsif @quiz_data[:current_question].nil?
       render "quiz_results"
     else
-      @current_question = @quiz.questions.find{|q| q.id == @quiz_data[:current_question]}
+      @current_question = @quiz.questions.find_by_id @quiz_data[:current_question]
       render "quiz_question"
     end
   end
@@ -45,8 +45,8 @@ take_quiz sends you to a quiz_results page.
   def answer
     @quiz_data["#{params[:question_id]}_answer"] = params[:answer_id]
 
-    current_question_index = @quiz.questions.find{|q| q.id==params[:question_id]}
-    next_question_id = @quiz.questions[current_question_index].try :id
+    current_question_index = @quiz.questions.index(Question.find(params[:question_id]))
+    next_question_id = @quiz.questions[current_question_index+1].try :id
     @quiz_data[:current_question] = next_question_id
 
     redirect_to take_quiz_url(params[:short_name])

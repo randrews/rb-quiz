@@ -2,4 +2,4 @@
 
 %ul.answers
   -@current_question.answers.each do |answer|
-    %li.answer=answer.answer
+    %li.answer=link_to answer.answer, answer_quiz_url(@quiz.short_name, @current_question.id, answer.id)
