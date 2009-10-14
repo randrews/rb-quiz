@@ -1,0 +1,5 @@
+.question-text=@current_question.question
+
+%ul.answers
+  -@current_question.answers.each do |answer|
+    %li.answer=answer.answer
