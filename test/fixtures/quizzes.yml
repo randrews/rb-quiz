@@ -9,4 +9,5 @@
 quiz_001:
   id: 1
   name: Test Quiz
+  short_name: test-quiz
   description: A simple test quiz
