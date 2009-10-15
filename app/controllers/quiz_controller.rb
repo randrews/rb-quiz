@@ -39,6 +39,11 @@ take_quiz sends you to a quiz_results page.
     end
   end
 
+  def restart
+    session[:quiz_data][@quiz.short_name] = @quiz.init_session_data
+    redirect_to take_quiz_url(params[:short_name])
+  end
+
   def start
     @quiz_data[:current_question] = @quiz.questions.first.id
     redirect_to take_quiz_url(params[:short_name])
