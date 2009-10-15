@@ -16,4 +16,17 @@ class Quiz < ActiveRecord::Base
       questions.map(&:id).each{|a_id| data["#{a_id}_answer"] = nil}
     end
   end
+
+  def score quiz_data
+    scores = Hash.new 0
+    results.each{|r| scores[r.id]=0}
+
+    questions.each do |q|
+      answer = Answer.find_by_id(quiz_data["#{q.id}_answer"]) or next
+      scores[answer.result] += answer.points if answer.quiz == self
+    end
+
+    result_id = scores.to_a.sort{|(r1,s1),(r2,s2)| s2<=>s1}.first[0]
+    Result.find_by_id result_id
+  end
 end

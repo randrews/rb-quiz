@@ -26,10 +26,12 @@ take_quiz sends you to a quiz_results page.
   before_filter :quiz_data
 
   def take_quiz
-    puts session.inspect
+    puts session.inspect if RAILS_ENV=='development'
+
     if @quiz_data[:current_question]==0
       render "take_quiz"
     elsif @quiz_data[:current_question].nil?
+      @result = @quiz.score @quiz_data
       render "quiz_results"
     else
       @current_question = @quiz.questions.find_by_id @quiz_data[:current_question]
