@@ -44,10 +44,8 @@ take_quiz sends you to a quiz_results page.
 
   def answer
     @quiz_data["#{params[:question_id]}_answer"] = params[:answer_id]
-
-    current_question_index = @quiz.questions.index(Question.find(params[:question_id]))
-    next_question_id = @quiz.questions[current_question_index+1].try :id
-    @quiz_data[:current_question] = next_question_id
+    @current_question = Question.find(params[:question_id])
+    @quiz_data[:current_question] = @current_question.next.try :id
 
     redirect_to take_quiz_url(params[:short_name])
   end
