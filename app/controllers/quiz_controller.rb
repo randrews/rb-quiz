@@ -32,10 +32,10 @@ take_quiz sends you to a quiz_results page.
       render "take_quiz"
     elsif @quiz_data[:current_question].nil?
       @result = @quiz.score @quiz_data
-      render "quiz_results"
+      render_or_partial "quiz_results"
     else
       @current_question = @quiz.questions.find_by_id @quiz_data[:current_question]
-      render "quiz_question"
+      render_or_partial "quiz_question"
     end
   end
 
@@ -58,6 +58,10 @@ take_quiz sends you to a quiz_results page.
   end
 
   private
+
+  def render_or_partial name
+    render(request.ajax? ? name : {:partial=>name})
+  end
 
   def quiz
     @quiz = Quiz.find_by_short_name params[:short_name]
