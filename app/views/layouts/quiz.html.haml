@@ -1,7 +1,9 @@
 %html
   %head
+    =stylesheet_link_tag 'quiz'
     =javascript_include_tag :defaults
     %title=(@title || "TickleMyGenius.com")
 
   %body
-    =yield
+    .quiz-container.centered
+      =yield

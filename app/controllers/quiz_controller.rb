@@ -29,7 +29,7 @@ take_quiz sends you to a quiz_results page.
     puts session.inspect if RAILS_ENV=='development'
 
     if @quiz_data[:current_question]==0
-      render "take_quiz"
+      render_or_partial "start_quiz"
     elsif @quiz_data[:current_question].nil?
       @result = @quiz.score @quiz_data
       render_or_partial "quiz_results"
@@ -60,7 +60,7 @@ take_quiz sends you to a quiz_results page.
   private
 
   def render_or_partial name
-    render(request.ajax? ? name : {:partial=>name})
+    render(request.xhr? ? {:partial=>name} : name)
   end
 
   def quiz
