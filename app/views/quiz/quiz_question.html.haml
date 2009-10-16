@@ -2,4 +2,11 @@
 
 %ul.answers
   -@current_question.answers.each do |answer|
-    %li.answer=link_to answer.answer, answer_quiz_url(@quiz.short_name, @current_question.id, answer.id)
+    %li
+      -link_to answer_quiz_url(@quiz.short_name, @current_question.id, answer.id) do
+        .answer{:class=>cycle('odd','even')}=answer.answer
+
+-link_to restart_quiz_url(@quiz.short_name) do
+  .bottom
+    .quiz-restart-link.button-link
+      Restart

@@ -14,4 +14,11 @@ a{ color: #333333; }
   background: #99ff99;
 }
 
-.quiz-start-link a { color: #006600; }
+.quiz-restart-link
+{ 
+  border-color: #993333;
+  background: #ff9999;
+}
+
+.answer.odd { background-color: white; }
+.answer.even { background-color: #cccccc; }
