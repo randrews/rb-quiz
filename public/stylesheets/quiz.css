@@ -2,26 +2,46 @@ body
 {
   font-size: 14pt;
   font-family: Verdana;
-  color: #555555;
 }
 
-a
-{
-  color: #333333;
-}
+a{ text-decoration: none; }
 
 .centered
 {
+  position: relative;
   margin: auto;
-  margin-top: 25px;
+}
+
+.bottom
+{
+  position:absolute;
+  width:100%;
+  bottom:15px;
 }
 
 .quiz-container
 { 
-  width:800px;
-  height:600px;
-  border:3px solid #999999;
+  margin-top: 25px;
+  width:700px;
+  height:500px;
+  border:3px solid;
   -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
   padding: 15px;
-  background: #e9e9e9;
+}
+
+.quiz-title
+{
+  font-size: 22pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+.quiz-start-link
+{
+  text-align: center;
+  border: 3px solid;
+  width: 250px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
 }

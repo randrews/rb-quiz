@@ -2,4 +2,7 @@
 
 .quiz-description=@quiz.description
 
-=link_to "Start quiz", start_quiz_url(@quiz.short_name)
+-link_to start_quiz_url(@quiz.short_name) do
+  .bottom
+    .quiz-start-link.centered
+      Start Quiz

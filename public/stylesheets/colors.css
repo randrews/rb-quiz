@@ -1,0 +1,17 @@
+body{ color: #555555; }
+
+a{ color: #333333; }
+
+.quiz-container
+{
+  border-color: #999999;
+  background: #e9e9e9;
+}
+
+.quiz-start-link
+{ 
+  border-color: #339933;
+  background: #99ff99;
+}
+
+.quiz-start-link a { color: #006600; }
