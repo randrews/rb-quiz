@@ -12,8 +12,7 @@ class Quiz < ActiveRecord::Base
   # A hash of data that goes into the session when someone starts taking this quiz
   def init_session_data
     returning({}) do |data|
-      data[:current_question] = 0
-      questions.map(&:id).each{|a_id| data["#{a_id}_answer"] = nil}
+      questions.map(&:id).each{|a_id| data[a_id] = nil}
     end
   end
 
@@ -22,7 +21,7 @@ class Quiz < ActiveRecord::Base
     results.each{|r| scores[r.id]=0}
 
     questions.each do |q|
-      answer = Answer.find_by_id(quiz_data["#{q.id}_answer"]) or next
+      answer = Answer.find_by_id(quiz_data[q.id]) or next
       scores[answer.result] += answer.points if answer.quiz == self
     end
 

@@ -7,10 +7,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
 
-  map.take_quiz "/quiz/:short_name", :controller=>"quiz", :action=>"take_quiz"
+  map.start_quiz "/quiz/:short_name", :controller=>"quiz", :action=>"start_quiz"
   map.answer_quiz "/quiz/:short_name/:question_id/:answer_id", :controller=>"quiz", :action=>"answer"
-  map.start_quiz "/quiz/:short_name/start", :controller=>"quiz", :action=>"start"
   map.restart_quiz "/quiz/:short_name/restart", :controller=>"quiz", :action=>"restart"
+  map.quiz_results "/quiz/:short_name/results", :controller=>"quiz", :action=>"results"
+  map.quiz_question "/quiz/:short_name/:question_id", :controller=>"quiz", :action=>"question"
 
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'

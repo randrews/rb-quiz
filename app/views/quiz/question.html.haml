@@ -1,9 +1,9 @@
-.question-text=@current_question.question
+.question-text=@question.question
 
 %ul.answers
-  -@current_question.answers.each do |answer|
+  -@question.answers.each do |answer|
     %li
-      -link_to answer_quiz_url(@quiz.short_name, @current_question.id, answer.id) do
+      -link_to answer_quiz_url(@quiz.short_name, @question.id, answer.id) do
         .answer{:class=>cycle('odd','even')}=answer.answer
 
 -link_to restart_quiz_url(@quiz.short_name) do
