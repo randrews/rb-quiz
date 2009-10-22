@@ -10,11 +10,12 @@ class QuizController < ApplicationController
 
   def question
     @question = @quiz.questions.find_by_id params[:question_id]
+    redirect_to start_quiz_url(@quiz.short_name) unless @question
   end
 
   def results
     @result = @quiz.score @quiz_data
-  end    
+  end
 
   ### POST requests ###
 
