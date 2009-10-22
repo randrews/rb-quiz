@@ -20,8 +20,8 @@ a{ color: #333333; }
   background: #ff9999;
 }
 
-.answer.odd { background-color: white; }
-.answer.even { background-color: #cccccc; }
+.answer.odd { background-color: white; border-color: white; }
+.answer.even { background-color: #cccccc; border-color: #cccccc; }
 .answer:hover { border-color: #555555; }
 
 .question-status { border-color: #555555; }

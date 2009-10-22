@@ -3,8 +3,8 @@
 %ul.answers
   -@question.answers.each do |answer|
     %li
-      -link_to answer_quiz_url(@quiz.short_name, @question.id, answer.id) do
-        .answer{:class=>cycle('odd','even')}=answer.answer
+      .answer{:class=>cycle('odd','even')}
+        =link_to answer.answer, answer_quiz_url(@quiz.short_name, @question.id, answer.id)
 
 -link_to restart_quiz_url(@quiz.short_name) do
   .bottom
