@@ -1,0 +1,7 @@
+.progress-indicator
+  -@quiz.questions.reverse.each do |question|
+    -link_to quiz_question_url(@quiz.short_name,question.id) do
+      -if question.id == @question.id
+        .question-status.current{:class=>(@quiz_data[question.id] ? "answered" : "unanswered")}
+      -else
+        .question-status{:class=>(@quiz_data[question.id] ? "answered" : "unanswered")}

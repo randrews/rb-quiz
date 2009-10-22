@@ -22,3 +22,9 @@ a{ color: #333333; }
 
 .answer.odd { background-color: white; }
 .answer.even { background-color: #cccccc; }
+.answer:hover { border-color: #555555; }
+
+.question-status { border-color: #555555; }
+.question-status.unanswered { background-color: #cccccc; }
+.question-status.answered { background-color: #99ff99; }
+.question-status.current { border-color: white; }

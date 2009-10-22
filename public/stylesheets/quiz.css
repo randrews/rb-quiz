@@ -42,6 +42,7 @@ a{ text-decoration: none; }
   text-align: center;
   border: 3px solid;
   width: 250px;
+  height: 23px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
 }
@@ -61,7 +62,8 @@ ul.answers
 
 .answer:hover
 {
-  border: 3px solid;
+  border-width: 3px;
+  border-style: solid;
   padding: 2px;
 }
 
@@ -71,4 +73,22 @@ ul.answers
   padding: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+}
+
+.progress-indicator
+{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.progress-indicator .question-status
+{
+  float: right;
+  width: 23px;
+  height: 23px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-width: 3px;
+  border-style: solid;
 }
