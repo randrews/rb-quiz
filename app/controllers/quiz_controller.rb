@@ -32,7 +32,11 @@ class QuizController < ApplicationController
     if next_question
       redirect_to quiz_question_url(params[:short_name], next_question)
     else
-      redirect_to quiz_results_url(params[:short_name])
+      if @quiz_data.values.include? nil
+        redirect_to quiz_question_url(params[:short_name], question.id)
+      else
+        redirect_to quiz_results_url(params[:short_name])
+      end
     end
   end
 
