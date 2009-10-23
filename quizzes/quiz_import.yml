@@ -1,0 +1,24 @@
+quiz_import_test:
+  name: Quiz import test
+  description: "This is a test of the quiz import system.
+                This file, quiz_import.yml, is an example of the quiz import format.
+                You can do multiline strings like this."
+  results:
+    - name: Result 1
+      description: The first result
+    - name: Result 2
+      description: The second result
+  questions:
+    - question: "What's the answer to life, the universe, and everything?"
+      answers:
+        - answer: "I don't know"
+          result: Result 1
+          points: 10 # This is optional
+        - answer: 42
+          result: Result 2
+    - question: Live long and...
+      answers:
+        - answer: prosper
+          result: Result 2
+        - answer: make money
+          result: Result 1
