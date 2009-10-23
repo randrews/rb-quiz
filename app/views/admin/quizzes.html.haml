@@ -6,3 +6,18 @@
   =submit_tag "Import"
 
 =render :partial=>"/application/flash", :locals=>{:flash=>flash}
+
+%table.quizzes{:cellspacing=>0}
+  %thead
+    %th="ID"
+    %th="Short name"
+    %th="Name"
+    %th="Created"
+    %th
+  -@quizzes.each do |quiz|
+    %tr{:class=>cycle("odd", "even")}
+      %td=quiz.id
+      %td=link_to quiz.short_name, start_quiz_url(quiz.short_name), :target=>"_blank"
+      %td=quiz.name
+      %td="#{time_ago_in_words quiz.created_at} ago"
+      %td=button_to "Delete", {:action=>"delete", :id=>quiz.id}, :confirm=>"Are you sure you want to delete this quiz?"

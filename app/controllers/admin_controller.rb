@@ -1,8 +1,23 @@
 class AdminController < ApplicationController
   require_role "admin"
 
+  def index ; redirect_to :action=>"quizzes" ; end
+
   def quizzes
     @quizzes = Quiz.all
+  end
+
+  def delete
+    if request.post?
+      begin
+        Quiz.find(params[:id]).destroy
+        flash[:success]="Quiz deleted"
+      rescue
+        flash[:error]=$!.to_s
+      end
+    end
+
+    redirect_to :action=>"quizzes"
   end
 
   def import_quiz
@@ -33,7 +48,7 @@ class AdminController < ApplicationController
               question_data["answers"].each_with_index do |answer_data, answer_order|
                 answer_fields = answer_data.reject{|k,v| k=="result"}
                 answer = Answer.create(answer_fields.reverse_merge("order_num"=>answer_order,
-                                                                   "result_id"=>results[answer_data["result"]],
+                                                                   "result"=>results[answer_data["result"]],
                                                                    "points"=>1))
 
                 question.answers << answer
