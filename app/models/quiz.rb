@@ -1,6 +1,6 @@
 class Quiz < ActiveRecord::Base
-  has_many :questions, :order=>:order_num
-  has_many :results
+  has_many :questions, :order=>:order_num, :dependent=>:destroy
+  has_many :results, :dependent=>:destroy
 
   validates_uniqueness_of :short_name
   validates_presence_of :short_name, :name
