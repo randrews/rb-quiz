@@ -1,0 +1,8 @@
+%h1="Quizzes"
+
+-form_tag({:action=>"import_quiz"}, :multipart=>true) do
+  =label_tag "quiz", "File to import:"
+  =file_field_tag "quiz"
+  =submit_tag "Import"
+
+=render :partial=>"/application/flash", :locals=>{:flash=>flash}

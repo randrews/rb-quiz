@@ -1,0 +1,32 @@
+body
+{
+  font-size: 14pt;
+  font-family: Verdana;
+}
+
+.centered
+{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flash
+{
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px;
+}
+
+/* Some basic flash styles */
+.flash.success
+{
+  border-color: #339933;
+  background: #99ff99;
+}
+
+.flash.error
+{
+  border-color: #993333;
+  background: #ff9999;
+}
