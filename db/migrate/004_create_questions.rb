@@ -1,7 +1,7 @@
 class CreateQuestions < ActiveRecord::Migration
   def self.up
     create_table :questions do |t|
-      t.string :question
+      t.text :question
       t.integer :order_num
       t.integer :quiz_id
       t.timestamps

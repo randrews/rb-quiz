@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 8) do
   end
 
   create_table "questions", :force => true do |t|
-    t.string   "question"
+    t.text     "question"
     t.integer  "order_num"
     t.integer  "quiz_id"
     t.datetime "created_at"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 8) do
 
   create_table "quizzes", :force => true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "short_name"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(:version => 8) do
 
   create_table "results", :force => true do |t|
     t.string   "name"
-    t.string   "description"
-    t.string   "quiz_id"
+    t.text     "description"
+    t.integer  "quiz_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

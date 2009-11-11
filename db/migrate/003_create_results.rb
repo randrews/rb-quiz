@@ -2,8 +2,8 @@ class CreateResults < ActiveRecord::Migration
   def self.up
     create_table :results do |t|
       t.string :name
-      t.string :description
-      t.string :quiz_id
+      t.text :description
+      t.integer :quiz_id
       t.timestamps
     end
   end
