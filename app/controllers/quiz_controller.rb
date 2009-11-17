@@ -1,10 +1,14 @@
 class QuizController < ApplicationController
-  before_filter :quiz
-  before_filter :quiz_data
+  before_filter :quiz, :except=>"index"
+  before_filter :quiz_data, :except=>"index"
 
   layout Proc.new{|controller| controller.request.xhr? ? false : "quiz" }
 
   ### GET requests ###
+
+  def index
+    @quizzes = Quiz.all
+  end
 
   def start_quiz ; end
 

@@ -1,0 +1,7 @@
+.quiz-title="Take a Quiz!"
+
+%ul.quizzes
+  -@quizzes.each do |quiz|
+    %li
+      .quiz{:class=>cycle('odd','even')}
+        =link_to quiz.name, start_quiz_url(quiz.short_name)

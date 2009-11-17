@@ -4,5 +4,7 @@
 
 -link_to quiz_question_url(@quiz.short_name, @quiz.questions.first.id) do
   .bottom
-    .quiz-start-link.button-link.centered
-      Start Quiz
+    .quiz-start-link.button-link.centered="Start Quiz"
+
+-link_to root_url do
+  .quiz-restart-link.button-link.bottom.left="Quiz List"

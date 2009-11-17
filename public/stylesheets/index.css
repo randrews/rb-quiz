@@ -1,0 +1,24 @@
+
+ul.quizzes
+{
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.quiz
+{
+  position: relative;
+  height: 23px;
+  margin: 10px;
+  padding: 2px;
+  border-width: 3px;
+  border-style: solid;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.quiz a
+{
+  position: absolute;
+  width: 100%; height: 100%;
+}

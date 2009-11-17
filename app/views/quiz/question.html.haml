@@ -7,8 +7,7 @@
         =link_to answer.answer, answer_quiz_url(@quiz.short_name, @question.id, answer.id)
 
 -link_to restart_quiz_url(@quiz.short_name) do
-  .bottom
-    .quiz-restart-link.button-link
-      Restart
+  .quiz-restart-link.button-link.bottom.left
+    Restart
 
 =render :partial=>"progress"

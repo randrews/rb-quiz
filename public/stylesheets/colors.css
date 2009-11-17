@@ -24,6 +24,10 @@ a{ color: #333333; }
 .answer.even { background-color: #cccccc; border-color: #cccccc; }
 .answer:hover { border-color: #555555; }
 
+.quiz.odd { background-color: white; border-color: white; }
+.quiz.even { background-color: #cccccc; border-color: #cccccc; }
+.quiz:hover { border-color: #555555; }
+
 .question-status { border-color: #555555; }
 .question-status.unanswered { background-color: #cccccc; }
 .question-status.answered { background-color: #99ff99; }
