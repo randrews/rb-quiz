@@ -1,0 +1,9 @@
+.nav-buttons.centered
+  -link_to edit_quiz_url(quiz.short_name) do
+    .nav-button{:class=>(action=="edit_quiz" ? "active" : "")}="Description"
+  -link_to edit_results_url(@quiz.short_name) do
+    .nav-button{:class=>(action=="edit_results" ? "active" : "")}="Results"
+  -link_to edit_questions_url(@quiz.short_name) do
+    .nav-button{:class=>(action=="edit_questions" ? "active" : "")}="Questions"
+
+.nav-buttons-clear

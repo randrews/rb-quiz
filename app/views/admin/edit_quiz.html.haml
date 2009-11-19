@@ -1,0 +1,21 @@
+%h1
+  ="Edit \"#{@quiz.name}\""
+  .back-link=link_to "[back]", admin_url
+
+=render :partial=>"nav_buttons", :locals=>{:quiz=>@quiz, :action=>@action}
+
+.quiz-form.centered
+  =render :partial=>"/application/flash", :locals=>{:flash=>flash}
+
+  -form_for "quiz", @quiz do |f|
+    =f.label "name"
+    =f.text_field "name"
+
+    =f.label "short_name"
+    =f.text_field "short_name"
+
+    =f.label "description"
+    =f.text_area "description", :rows=>5
+
+    =f.submit "Save"
+

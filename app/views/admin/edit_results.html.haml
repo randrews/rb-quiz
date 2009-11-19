@@ -1,0 +1,6 @@
+%h1
+  ="Edit Results for \"#{@quiz.name}\""
+  .back-link=link_to "[back]", admin_url
+
+=render :partial=>"nav_buttons", :locals=>{:quiz=>@quiz, :action=>@action}
+=render :partial=>"/application/flash", :locals=>{:flash=>flash}

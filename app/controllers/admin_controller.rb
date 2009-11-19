@@ -1,6 +1,8 @@
 class AdminController < ApplicationController
   require_role "admin"
 
+  before_filter :find_quiz, :only=>%w{edit_quiz edit_results edit_questions}
+
   def index ; redirect_to :action=>"quizzes" ; end
 
   def quizzes
@@ -18,6 +20,16 @@ class AdminController < ApplicationController
     end
 
     redirect_to :action=>"quizzes"
+  end
+
+  def edit_quiz
+    if request.post?
+      try_flash do
+        @quiz.update_attributes params[:quiz]
+        "Updated"
+      end
+      redirect_to edit_quiz_url(@quiz.short_name)
+    end
   end
 
   def import_quiz
@@ -64,6 +76,21 @@ class AdminController < ApplicationController
         flash[:error] = "#{$!.to_s} at #{$!.backtrace.first.to_s}"
       end
       redirect_to :action=>"quizzes"
+    end
+  end
+
+  private
+
+  def find_quiz
+    @quiz = Quiz.find_by_short_name params[:short_name]
+    @action = params[:action]
+  end
+
+  def try_flash
+    begin
+      flash[:success] = yield
+    rescue
+      flash[:error] = "#{$!.to_s} at #{$!.backtrace.first.to_s}"
     end
   end
 end

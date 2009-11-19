@@ -6,6 +6,21 @@
   color: #555555;
   background-color: #cccccc;
   padding: 15px;
+  min-height: 100px;
+}
+
+h1 .back-link
+{
+  float: right;
+  font-size: 12px;
+  position: relative;
+  top: 6px;
+}
+
+h1 .back-link a, h1 .back-link a:visited
+{
+  text-decoration: none;
+  color: white;
 }
 
 h1
@@ -60,3 +75,62 @@ table.quizzes input
 
 tr.odd { background-color: white; }
 tr.even { background-color: #dddddd; }
+
+/* Edit quiz pages ********************************/
+
+.nav-buttons
+{
+  width: 600px;
+}
+
+.nav-buttons-clear
+{
+  height: 0;
+  clear: both;
+}
+
+.nav-button
+{
+  width: 198px;
+  float: left;
+  text-align: center;
+  border: 2px solid black;
+  border-left: none;
+}
+
+.nav-buttons a, .nav-buttons a:visited
+{
+  text-decoration: none;
+  color: black;
+}
+
+.nav-button.active { background-color: white; }
+
+.nav-buttons > a:first-child > .nav-button { border-left: 2px solid black; width: 196px; }
+
+.quiz-form
+{
+  width: 80%;
+  top: 20px;
+  margin-bottom: 51px;
+}
+
+.quiz-form label
+{
+  margin-top: 20px;
+  display: block;
+}
+
+.quiz-form input[type=text], .quiz-form textarea
+{
+  width: 100%;
+}
+
+.quiz-form input[type=submit]
+{
+  position: absolute;
+  width: 200px;
+  bottom: -36px;
+  left: 50%;
+  margin-left: -100px;
+}

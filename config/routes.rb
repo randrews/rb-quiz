@@ -15,6 +15,12 @@ ActionController::Routing::Routes.draw do |map|
   map.quiz_results "/quiz/:short_name/results", :controller=>"quiz", :action=>"results"
   map.quiz_question "/quiz/:short_name/:question_id", :controller=>"quiz", :action=>"question"
 
+  map.edit_quiz "/edit/:short_name", :controller=>"admin", :action=>"edit_quiz"
+  map.edit_results "/edit/:short_name/results", :controller=>"admin", :action=>"edit_results"
+  map.edit_questions "/edit/:short_name/questions", :controller=>"admin", :action=>"edit_questions"
+
+  map.admin "/admin", :controller=>"admin"
+
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
