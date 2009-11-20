@@ -1,0 +1,13 @@
+-container ||= "result-#{result.id}"
+
+.record-container.centered{:id=>"result-#{result.id}"}
+  =label_tag "Name:"
+  .field-value=result.name
+
+  =label_tag "Description:"
+  .field-value=result.description
+
+  .action-buttons
+    =link_to_remote "Edit", :url=>edit_result_path(result.id), :success=>"$('#{container}').replace(request.responseText);", :method=>:get
+    -if result.answers.empty?
+      =button_to_remote "Delete", :url=>delete_result_path(result.id), :confirm=>"Are you sure?", :success=>"new Effect.DropOut('#{container}');"

@@ -4,3 +4,9 @@
 
 =render :partial=>"nav_buttons", :locals=>{:quiz=>@quiz, :action=>@action}
 =render :partial=>"/application/flash", :locals=>{:flash=>flash}
+
+#quiz-results
+  -@quiz.results.each do |result|
+    =render :partial=>"result", :locals=>{:result=>result}
+
+=link_to_remote "New", :url=>edit_result_url(nil), :update=>"quiz-results", :position=>"bottom", :method=>:get

@@ -19,6 +19,10 @@ ActionController::Routing::Routes.draw do |map|
   map.edit_results "/edit/:short_name/results", :controller=>"admin", :action=>"edit_results"
   map.edit_questions "/edit/:short_name/questions", :controller=>"admin", :action=>"edit_questions"
 
+  map.show_result "/result/show/:id", :controller=>"admin", :action=>"show_result"
+  map.edit_result "/result/edit/:id", :controller=>"admin", :action=>"edit_result"
+  map.delete_result "/result/delete/:id", :controller=>"admin", :action=>"delete_result", :method=>:post
+
   map.admin "/admin", :controller=>"admin"
 
   map.connect ':controller/:action/:id'

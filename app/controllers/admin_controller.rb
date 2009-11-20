@@ -32,6 +32,32 @@ class AdminController < ApplicationController
     end
   end
 
+  def edit_result
+    if request.get?
+      result = Result.find_by_id(params[:id]) || Result.new
+      render :partial=>"edit_result", :locals=>{:result=>result}
+    else
+      result = if params[:result][:id]
+                 Result.find(params[:result][:id])
+               else
+                 Result.new
+               end
+
+      result.update_attributes params[:result]
+      result.save
+      redirect_to show_result_path(result.id)
+    end
+  end
+
+  def show_result
+    render :partial=>"result", :locals=>{:result=>Result.find_by_id(params[:id])}
+  end
+
+  def delete_result
+    Result.destroy Result.find(params[:id])
+    render :nothing=>true
+  end
+
   def import_quiz
     if request.post?
       begin

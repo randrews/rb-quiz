@@ -115,13 +115,13 @@ tr.even { background-color: #dddddd; }
   margin-bottom: 51px;
 }
 
-.quiz-form label
+label
 {
   margin-top: 20px;
   display: block;
 }
 
-.quiz-form input[type=text], .quiz-form textarea
+input[type=text], textarea
 {
   width: 100%;
 }
@@ -133,4 +133,35 @@ tr.even { background-color: #dddddd; }
   bottom: -36px;
   left: 50%;
   margin-left: -100px;
+}
+
+.record-container
+{
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: rgb(204,204,204);
+}
+
+.record-container .field-value
+{
+  margin-left: 20px;
+  color: black;
+}
+
+.record-container .action-buttons a, .record-container .action-buttons a:visited
+{
+  color: black;
+}
+
+.record-container input, .record-container label
+{
+  margin-top: 5px;
+}
+
+.record-container input[type=submit]
+{
+  display: inline;
 }
